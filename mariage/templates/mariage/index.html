@@ -1,0 +1,21 @@
+{% extends "mariage/layout.html" %}
+{% load static %}
+
+{% block body %}
+
+<p> Welcome on the index page. </p>
+
+{% if user.is_authenticated %}
+<p> You are logged in as: {{ user.username }}</p>
+{% endif %}
+
+Please choose how you would like to proceed:
+
+{% if user.is_authenticated %}
+<a href="{% url 'logout'%}">Logout</a>
+{% else %}
+<a href="{% url 'login'%}">Login</a>
+{% endif %}
+
+
+{% endblock %}
