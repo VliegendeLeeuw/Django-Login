@@ -4,15 +4,18 @@
 <html lang="nl">
 
 <head>
+    <link rel="stylesheet" href="{% static 'mariage/styles.css' %}">
     <title>{% block title %} Mariage invites {% endblock %}</title>
 </head>
 
 <body>
 
-    {% if message %}
-    {% for message in messages %}
-    <div id="message">{{ message }}</div>
-    {% endfor %}
+    {% if messages %}
+    <div class="message">
+        {% for message in messages %}
+        {{ message }}
+        {% endfor %}
+    </div>
     {% endif %}
 
     {% block body %}

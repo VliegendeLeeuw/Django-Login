@@ -2,17 +2,11 @@
 {% load static %}
 
 {% block body %}
-
-<form action="{% url 'register' %}" method="POST">
+<form action="{% url 'register' %}" method="post">
     {% csrf_token %}
-    <input type="text" name="username" placeholder="Enter username"></input>
-    <input type="text" name="email" placeholder="Enter e-mail address"></input>
-    <input type="password" name="password" placeholder="Password"></input>
-    <input type="password" name="confirmation" placeholder="Confirm password"></input>
-    <button type="submit">Register</button>
+    {{ form }}
+    <input type="submit" value="Submit">
 </form>
 
-<a href="{% url 'logout' %}">Logout</a>
-<a href="{% url 'register' %}">Register</a>
-
+<a href="{% url 'index' %}"> Go back </a>
 {% endblock %}

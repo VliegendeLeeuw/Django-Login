@@ -3,6 +3,8 @@
 
 {% block body %}
 
+<h1>Please login below. </h1>
+
 <form action="{% url 'login' %}" method="POST">
     {% csrf_token %}
     <input type="text" name="username" placeholder="Enter username"></input>
@@ -10,6 +12,7 @@
     <button type="submit">Log in</button>
 </form>
 
-<a href="{% url 'register' %}">Register new account</a>
+<h2>New here?</h2>
+<a href="{% url 'register' %}">Register a new account</a>
 
 {% endblock %}
